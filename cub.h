@@ -37,6 +37,24 @@ typedef struct s_cub
 
 }   t_cub;
 
+typedef struct s_colors
+{
+    int blue;
+    int green;
+    int red;
+}   t_colors;
+
+typedef struct s_floor
+{
+    t_colors colors;
+}   t_floor;
+
+typedef struct s_ciel
+{
+    t_colors colors;
+}   t_ciel;
+
+
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen(char *str);
@@ -61,5 +79,6 @@ void    nord_store(char *str, t_cub *cub);
 void    west_store(char *str, t_cub *cub);
 int     w_len(char *str);
 void     check_direction_nature(char *str, t_cub *cub);
+void    colors_storage(t_cub *cub);
 
 #endif

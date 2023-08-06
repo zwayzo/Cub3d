@@ -1,10 +1,11 @@
 NAME = Cub3d
-CFLAGS =  -Wall -Wextra -Werror -fsanitize=address
+CFLAGS =  -Wall -Wextra -Werror -fsanitize=address -g3
 FLAGS = -D BUFFER_SIZE=1
 MLX =  -Lmlx -framework OpenGL -framework AppKit 
 CC = cc
 SRCS = parsing/main.c libmlx.a parsing/directions_details.c parsing/directions_verification.c \
-		parsing/directions_variables.c parsing/directions_store.c
+		parsing/directions_variables.c parsing/directions_store.c #parsing/colors_params \
+
 
 SRC1 = ft_get_next_line/get_next_line.c ft_get_next_line/ft_hexadecimale.c \
 	ft_get_next_line/ft_putchar.c ft_get_next_line/ft_putnbr.c \

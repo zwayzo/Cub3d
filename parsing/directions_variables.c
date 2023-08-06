@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:56:12 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/05 17:14:39 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/07 00:57:41 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void    east_var_exist(char *str, t_cub *cub)
     int i;
 
     i = 0;
-    if (!(ft_strlen(&str[3])))
+    while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
+        i++;
+    i = i + 2;
+    if (!(ft_strlen(&str[i])))
     {
         printf("ERROR: EAST has no indication...!");
         exit (1);
@@ -41,9 +44,12 @@ void    west_var_exist(char *str, t_cub *cub)
     int i;
 
     i = 0;
-    if (!(ft_strlen(&str[3])))
+    while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
+        i++;
+    i = i + 2;
+    if (!(ft_strlen(&str[i])))
     {
-        printf("ERROR: WEST has no indication...!");
+        printf("ERROR: EAST has no indication...!");
         exit (1);
     }
     while (str[i])
@@ -64,7 +70,10 @@ void    south_var_exist(char *str, t_cub *cub)
     int i;
 
     i = 0;
-    if (!(ft_strlen(&str[3])))
+    while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
+        i++;
+    i = i + 2;
+    if (!(ft_strlen(&str[i])))
     {
         printf("ERROR: SOUTH has no indication...!");
         exit (1);
@@ -87,7 +96,10 @@ void    nord_var_exist(char *str, t_cub *cub)
     //  printf("nord{%s}\n", str);
 
     i = 0;
-    if (!(ft_strlen(&str[3])))
+    while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
+        i++;
+    i = i + 2;
+    if (!(ft_strlen(&str[i])))
     {
         printf("ERROR: NORD has no indication...!");
         exit (1);
@@ -107,12 +119,19 @@ void    nord_var_exist(char *str, t_cub *cub)
 
 void check_direction_nature(char *str, t_cub *cub)
 {
-    if (str[0] == 'N' && str[1] == 'O')
+    int i;
+
+    i = 0;
+    // printf("her\n");
+    while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
+        i++;
+    if (str[i] == 'N' && str[i + 1] == 'O')
         nord_store(str, cub);
-    if (str[0] == 'W' && str[1] == 'E')
+    if (str[i] == 'W' && str[i + 1] == 'E')
         west_store(str, cub);
-    if (str[0] == 'E' && str[1] == 'A')
+    if (str[i] == 'E' && str[i + 1] == 'A')
         east_store(str, cub);
-    if (str[0] == 'S' && str[1] == 'O')
+    if (str[i] == 'S' && str[i + 1] == 'O')
         south_store(str, cub);
+    // printf("out\n");
 }

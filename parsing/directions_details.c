@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 21:31:33 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/05 17:13:04 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/07 00:49:43 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void    ft_directions_init(t_cub *cub)
 
 void    check_for_deplucate(t_cub *cub)
 {
+    printf("%d\n", cub->indices->WE_indice);
     if (cub->indices->WE_indice != 1)
     {
         printf("ERROR: indication deplucate or manque (WE)...!");
@@ -55,14 +56,19 @@ void    directions_details(t_cub *cub)
     i = 0;
     j = 0;
     ft_directions_init(cub);
-    while (cub->params->maps[i] && cub->params->maps[i][0] != '\n')
+    
+    i = 0;
+    while (cub->params->maps[i])
     {
-        check_direction_nature(cub->params->maps[i], cub);
-        // printf("{%s}\n", cub->params->maps[i]);
-        west_ver(cub->params->maps[i], cub);
-        south_ver(cub->params->maps[i], cub);
-        east_ver(cub->params->maps[i], cub);
-        nord_ver(cub->params->maps[i], cub);
+        if (cub->params->maps[i][0] != '\n')
+        {
+            // printf("{%s}\n", cub->params->maps[i]);
+            check_direction_nature(cub->params->maps[i], cub);
+            west_ver(cub->params->maps[i], cub);
+            south_ver(cub->params->maps[i], cub);
+            east_ver(cub->params->maps[i], cub);
+            nord_ver(cub->params->maps[i], cub);
+        }
         i++;
         // printf("\n\n");
     }

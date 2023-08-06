@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 16:18:51 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/05 16:42:55 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/07 00:58:35 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int w_len(char *str)
     int i;
     int j;
 
-    i = 2;
+    i = 0;
     j = 0;
+    while (str[i] >= 'A' && str[i] <= 'Z')
+        i++;
     while (str[i] == 32 || str[i] == '\t')
         i++;
     j = i;
@@ -73,7 +75,6 @@ void    nord_store(char *str, t_cub *cub)
 
 void    south_store(char *str, t_cub *cub)
 {
-    // printf("{%s}\n", str);
     int len;
     int i;
     int j;
@@ -95,7 +96,6 @@ void    south_store(char *str, t_cub *cub)
 
 void    east_store(char *str, t_cub *cub)
 {
-    // printf("{%s}\n", str);
     int len;
     int i;
     int j;
