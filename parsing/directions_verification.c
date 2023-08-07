@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 21:37:44 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 00:49:24 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/07 01:08:52 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void    west_ver(char *str, t_cub *cub)
         i++;
     // printf("%d\n",i);
     // printf("{{%s}", &str[i]);
-    if (str[i] == 'W' && str[i + 1] == 'E')
+    if (str[i] == 'W' && str[i + 1] == 'E'
+        && (str[i + 2] == '\t' || str[i + 2] == 32))
     {
         cub->indices->WE_indice += 1;   
         west_var_exist(str, cub);
@@ -36,7 +37,8 @@ void    south_ver(char *str, t_cub *cub)
     i = 0;
     while (str[i] == 32 || str[i] == '\t')
         i++;
-    if (str[i] == 'S' && str[i + 1] == 'O')
+    if (str[i] == 'S' && str[i + 1] == 'O'
+        && (str[i + 2] == '\t' || str[i + 2] == 32))
     {
         cub->indices->SO_indice += 1;  
         south_var_exist(str, cub);
@@ -51,7 +53,8 @@ void    east_ver(char *str, t_cub *cub)
     i = 0;
     while (str[i] == 32 || str[i] == '\t')
         i++;
-    if (str[i] == 'E' && str[i + 1] == 'A')
+    if (str[i] == 'E' && str[i + 1] == 'A'
+        && (str[i + 2] == '\t' || str[i + 2] == 32))
     {
         cub->indices->EA_indice += 1;     
         // printf("east %d\n", cub->indices->EA_indice);
@@ -66,7 +69,8 @@ void    nord_ver(char *str, t_cub *cub)
     i = 0;
     while (str[i] == 32 || str[i] == '\t')
         i++;
-    if (str[i] == 'N' && str[i + 1] == 'O')
+    if (str[i] == 'N' && str[i + 1] == 'O'
+        && (str[i + 2] == '\t' || str[i + 2] == 32))
     {
         cub->indices->NO_indice += 1;
         nord_var_exist(str, cub);
