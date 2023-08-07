@@ -109,11 +109,23 @@ int main(int ac, char **av)
 	cub->params->name = av[1];
 	ft_maps_stock(cub);
 	directions_details(cub);
+	colors_stock(cub);
 	// colors_storage(cub);
-	printf("west = %s\n", cub->indices->WE_stock);
-	printf("south = %s\n", cub->indices->SO_stock);
-	printf("east = %s\n", cub->indices->EA_stock);
-	printf("nord = %s\n", cub->indices->NO_stock);
+	// printf("west = %s\n", cub->indices->WE_stock);
+	// printf("south = %s\n", cub->indices->SO_stock);
+	// printf("east = %s\n", cub->indices->EA_stock);
+	// printf("nord = %s\n", cub->indices->NO_stock);
+	printf("ciel : %d\n", cub->indices->ciel_indice);
+	printf("floor: %d\n", cub->indices->floor_indice);
+	printf("FLOOR \n");
+	printf("           RED :%d\n", cub->indices->floor->red);
+	printf("           GREEN :%d\n", cub->indices->floor->green);
+	printf("           BLUE :%d\n", cub->indices->floor->blue);
+	printf("CIEL \n");
+	printf("           RED :%d\n", cub->indices->ciel->red);
+	printf("           GREEN :%d\n", cub->indices->ciel->green);
+	printf("           BLUE :%d\n", cub->indices->ciel->blue);
+
 
 
 

@@ -11,17 +11,29 @@
 # define HEX "0123456789abcdef"
 # define HEX_MAJ "0123456789ABCDEF"
 
+typedef struct s_colors
+{
+    int blue;
+    int green;
+    int red;
+}   t_colors;
+
 typedef struct s_indice
 {
     int     NO_indice;
     int     WE_indice;
-    int     SO_indice;
+    int      SO_indice;
     int     EA_indice;
     char    *NO_stock;
     char    *WE_stock;
     char    *SO_stock;
     char    *EA_stock;
+    t_colors    *ciel;
+    int     ciel_indice;
+    int     floor_indice;
+    t_colors    *floor;
 }   t_incice;
+
 
 typedef struct s_param
 {
@@ -37,22 +49,7 @@ typedef struct s_cub
 
 }   t_cub;
 
-typedef struct s_colors
-{
-    int blue;
-    int green;
-    int red;
-}   t_colors;
 
-typedef struct s_floor
-{
-    t_colors colors;
-}   t_floor;
-
-typedef struct s_ciel
-{
-    t_colors colors;
-}   t_ciel;
 
 
 char	*get_next_line(int fd);
@@ -62,7 +59,7 @@ char	*ft_strcpy(char *dst, char *src);
 char	*ft_substr(char *s, int start, int len);
 char	*ft_strdup(char *s1);
 void	part1(int *i, char *s1, char *ptr);
-int	ft_putchar(char c);
+int     ft_putchar(char c);
 void    ft_directions_init(t_cub *cub);
 void    directions_details(t_cub *cub);
 void    west_ver(char *str, t_cub *cub);
@@ -78,7 +75,15 @@ void    south_store(char *str, t_cub *cub);
 void    nord_store(char *str, t_cub *cub);
 void    west_store(char *str, t_cub *cub);
 int     w_len(char *str);
-void     check_direction_nature(char *str, t_cub *cub);
+void    check_direction_nature(char *str, t_cub *cub);
 void    colors_storage(t_cub *cub);
+void    colors_stock(t_cub *cub);
+char	**ft_split(char *s, char c);
+void    red_floor_split(char *str, t_cub *cub);
+void    green_floor_split(char *str, t_cub *cub);
+void    blue_floor_split(char *str, t_cub *cub);
+void    red_ciel_split(char *str, t_cub *cub);
+void    green_ciel_split(char *str, t_cub *cub);
+void    blue_ciel_split(char *str, t_cub *cub);
 
 #endif
