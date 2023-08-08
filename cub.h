@@ -85,5 +85,9 @@ void    blue_floor_split(char *str, t_cub *cub);
 void    red_ciel_split(char *str, t_cub *cub);
 void    green_ciel_split(char *str, t_cub *cub);
 void    blue_ciel_split(char *str, t_cub *cub);
+void    double_free(char **str);
+int     double_lenght(char **str);
+int     number_finder(char *str);
+int     comma_finder(char *str);
 
 #endif

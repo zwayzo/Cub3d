@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 01:21:54 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 17:09:08 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/07 20:48:23 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,10 @@ void colors_stock(t_cub *cub)
             || cub->params->maps[i][j + 1] == '\t'
             || cub->params->maps[i][j + 1] == '\n'))
             {
-                // printf("HEEEEEER\n");
                 cub->indices->ciel_indice += 1;
                 red_ciel_split(cub->params->maps[i], cub);
                 green_ciel_split(cub->params->maps[i], cub);
                 blue_ciel_split(cub->params->maps[i], cub);
-                // printf("{%s}\n", cub->params->maps[i]);
             }
             else if (cub->params->maps[i][j] == 'F'
             && (cub->params->maps[i][j + 1] == 32 

@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 21:31:33 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 00:49:43 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/07 20:45:58 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    ft_directions_init(t_cub *cub)
 
 void    check_for_deplucate(t_cub *cub)
 {
-    printf("%d\n", cub->indices->WE_indice);
+    // printf("%d\n", cub->indices->WE_indice);
     if (cub->indices->WE_indice != 1)
     {
         printf("ERROR: indication deplucate or manque (WE)...!");

@@ -76,14 +76,7 @@ void	ft_maps_stock(t_cub *cub)
 	int		j;
 	int		fd;
 	cub->params->lines_numbers = count_lines(cub);
-	// printf("{%d}\n", cub->params->lines_numbers);
 	cub->params->maps = map_stock(cub);
-	// int i = 0;
-	// while (cub->params->maps[i])
-	// {
-	// 	// printf("{%s}\n", cub->params->maps[i]);
-	// 	i++;
-	// }
 }
 
 
@@ -111,10 +104,10 @@ int main(int ac, char **av)
 	directions_details(cub);
 	colors_stock(cub);
 	// colors_storage(cub);
-	// printf("west = %s\n", cub->indices->WE_stock);
-	// printf("south = %s\n", cub->indices->SO_stock);
-	// printf("east = %s\n", cub->indices->EA_stock);
-	// printf("nord = %s\n", cub->indices->NO_stock);
+	printf("west = %s\n", cub->indices->WE_stock);
+	printf("south = %s\n", cub->indices->SO_stock);
+	printf("east = %s\n", cub->indices->EA_stock);
+	printf("nord = %s\n", cub->indices->NO_stock);
 	printf("ciel : %d\n", cub->indices->ciel_indice);
 	printf("floor: %d\n", cub->indices->floor_indice);
 	printf("FLOOR \n");
