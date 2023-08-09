@@ -32,6 +32,7 @@ typedef struct s_indice
     int     ciel_indice;
     int     floor_indice;
     t_colors    *floor;
+    int begin_line;
 }   t_incice;
 
 
@@ -89,5 +90,9 @@ void    double_free(char **str);
 int     double_lenght(char **str);
 int     number_finder(char *str);
 int     comma_finder(char *str);
-
+void    maps_working(t_cub *cub);
+void    first_one(t_cub *cub);
+void    last_one(t_cub *cub);
+void    first_wall(t_cub *cub);
+void    last_wall(t_cub *cub);
 #endif

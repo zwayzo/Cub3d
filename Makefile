@@ -5,7 +5,8 @@ MLX =  -Lmlx -framework OpenGL -framework AppKit
 CC = cc
 SRCS = parsing/main.c libmlx.a parsing/directions_details.c parsing/directions_verification.c \
 		parsing/directions_variables.c parsing/directions_store.c parsing/colors_stock.c \
-		parsing/ft_split.c parsing/RGB_stock.c parsing/ciel_split.c  parsing/tools_colors.c
+		parsing/ft_split.c parsing/RGB_stock.c parsing/ciel_split.c  parsing/tools_colors.c \
+		parsing/maps_working.c parsing/wall_verification.c 
 
 
 SRC1 = ft_get_next_line/get_next_line.c ft_get_next_line/ft_hexadecimale.c \

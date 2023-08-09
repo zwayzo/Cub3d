@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 01:21:54 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 20:48:23 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:16:46 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,15 @@ void colors_stock(t_cub *cub)
             || cub->params->maps[i][j + 1] == '\t')
             || cub->params->maps[i][j + 1] == '\n')
             {
-                // printf("enter\n");
                 cub->indices->floor_indice += 1;
                 red_floor_split(cub->params->maps[i], cub);
                 green_floor_split(cub->params->maps[i], cub);
                 blue_floor_split(cub->params->maps[i], cub);
-                // char **tmp = ft_split(cub->params->maps[i], '=');
-                // x = 0;
-                // while (tmp[1][x] == 32 || tmp[1][x] == '\t')
-                //     x++;
-                // cub->indices->floor->blue = atoi(&tmp[1][x]);
-                // printf("floor is |%d|\n", cub->indices->floor->blue);
             }
         }
         i++;
         j = 0;
     }
+    cub->indices->begin_line = i - 4;
     colors_check(cub);
 }
