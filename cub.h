@@ -20,19 +20,22 @@ typedef struct s_colors
 
 typedef struct s_indice
 {
-    int     NO_indice;
-    int     WE_indice;
-    int      SO_indice;
-    int     EA_indice;
-    char    *NO_stock;
-    char    *WE_stock;
-    char    *SO_stock;
-    char    *EA_stock;
+    int      NO_indice;
+    int         WE_indice;
+    int         SO_indice;
+    int         EA_indice;
+    char        *NO_stock;
+    char        *WE_stock;
+    char        *SO_stock;
+    char        *EA_stock;
     t_colors    *ciel;
-    int     ciel_indice;
-    int     floor_indice;
+    int         ciel_indice;
+    int         floor_indice;
     t_colors    *floor;
-    int begin_line;
+    int         begin_line;
+    int         player_indice;
+    char        player;
+
 }   t_incice;
 
 
@@ -99,5 +102,5 @@ void    first_line_detecte(t_cub *cub, int i);
 int     ciel_detecte(t_cub *cub, int i, int j);
 void    RGB_call_function(t_cub *cub, int i, int n);
 void    colors_check(t_cub *cub);
-
+void    player_param(t_cub *cub);
 #endif

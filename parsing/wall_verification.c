@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 20:14:10 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/13 14:25:19 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/13 15:05:13 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,11 @@ void    last_wall(t_cub *cub)
     while (cub->params->maps[i][j] == 32 ||
         cub->params->maps[i][j] == '\t')
         j++;
-    while (cub->params->maps[i][j])
+    while (cub->params->maps[i][j + 1])
     {
         if (cub->params->maps[i][j] != '1')
         {
-            printf("ERROR: incomplet wall(last line)...!");
+            printf("ERROR: last wall incomplet...!");
             exit (1);
         }
         j++;
