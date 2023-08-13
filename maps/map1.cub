@@ -1,7 +1,7 @@
-NO textures/wood_strips.xpm
-SO textures/wood.xpm
-WE textures/wood_box.xpm
-EA textures/rocks.xpm
+NO 3textures/wood_strips.xpm
+SO 2textures/wood.xpm
+WE 1textures/wood_box.xpm
+EA 33textures/rocks.xpm
 
 C 103, 193, 202
 F 125, 130, 140

@@ -95,4 +95,9 @@ void    first_one(t_cub *cub);
 void    last_one(t_cub *cub);
 void    first_wall(t_cub *cub);
 void    last_wall(t_cub *cub);
+void    first_line_detecte(t_cub *cub, int i);
+int     ciel_detecte(t_cub *cub, int i, int j);
+void    RGB_call_function(t_cub *cub, int i, int n);
+void    colors_check(t_cub *cub);
+
 #endif
