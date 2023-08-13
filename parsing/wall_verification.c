@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 20:14:10 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/10 17:14:18 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/13 13:52:00 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,13 @@ void    first_wall(t_cub *cub)
     int i;
 
     i = 0;
+    // printf("{%s}\n", cub->params->maps[cub->indices->begin_line]);
+    // printf("{%s}\n", cub->params->maps[cub->indices->begin_line +1]);
     while (cub->params->maps[cub->indices->begin_line][i]== 32 
         || cub->params->maps[cub->indices->begin_line][i]== '\t')
         i++;
+    // printf("%d\n", cub->indices->begin_line);
+    // printf("%s\n", cub->params->maps[cub->indices->begin_line]);
     while (cub->params->maps[cub->indices->begin_line][i + 1])
     {
         if (cub->params->maps[cub->indices->begin_line][i] != '1')

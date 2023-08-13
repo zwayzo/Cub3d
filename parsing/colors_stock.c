@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 01:21:54 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/09 19:16:46 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/13 13:52:20 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ void colors_stock(t_cub *cub)
     j = 0;
     cub->indices->ciel = malloc(sizeof(cub->indices->ciel));
     cub->indices->floor = malloc(sizeof(cub->indices->floor));
-    while (cub->params->maps[i])
+    while (cub->params->maps[i] && (cub->indices->ciel_indice == 0
+    || cub->indices->floor_indice == 0))
     {
+        // printf("{%s}\n", cub->params->maps[i]);
+        // printf("{%d}{%d}\n", cub->indices->ciel_indice, cub->indices->floor_indice);
         if (!(cub->params->maps[i][j] == '\n'))
         {
             while (cub->params->maps[i][j] == '\t'
@@ -63,6 +66,31 @@ void colors_stock(t_cub *cub)
         i++;
         j = 0;
     }
-    cub->indices->begin_line = i - 4;
+    j = 0;
+    int n = 0;
+    while (n == 0 && cub->params->maps[i])
+    {
+        // printf("%s\n", cub->params->maps[i]);
+        while (n == 0 && cub->params->maps[i][j])
+        {
+            // printf("|%c|\n", cub->params->maps[i][j]);
+            if (cub->params->maps[i][j] != 32
+            && cub->params->maps[i][j] != '\t'
+            && cub->params->maps[i][j] != '\n')
+            {
+                n++;
+                break;
+            };
+            j++;
+        }
+        i++;
+        j = 0;
+    }
+    i = i - 1;
+    // i++;
+    // printf("{%d}{%d}\n", cub->indices->ciel_indice, cub->indices->floor_indice);
+    // printf("i {%d}\n", i);
+    cub->indices->begin_line = i;
+    // printf("begin line {%d}\n", cub->indices->begin_line);
     colors_check(cub);
 }
