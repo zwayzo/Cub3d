@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:58:26 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/08 14:08:25 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/13 21:52:15 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void    red_ciel_split(char *str, t_cub *cub)
     if (double_lenght(tmp) != 3)
     {
         printf("ERROR: RGB parametres error..!");
+        exit (1);
     }
     if (tmp[0])
     {

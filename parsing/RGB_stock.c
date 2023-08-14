@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:23:28 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/08 14:12:18 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/13 21:58:08 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ void    red_floor_split(char *str, t_cub *cub)
             double_free (t);
         }
         double_free (tmp);
+    }
+    else
+    {
+        printf("ERROR: Floor parametre ...!");
+        exit (1);
     }
 }
 
