@@ -103,4 +103,5 @@ int     ciel_detecte(t_cub *cub, int i, int j);
 void    RGB_call_function(t_cub *cub, int i, int n);
 void    colors_check(t_cub *cub);
 void    player_param(t_cub *cub);
+void    space_checking(t_cub *cub);
 #endif

@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 19:21:46 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/13 15:05:29 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/14 15:27:16 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void    maps_working(t_cub *cub)
         printf("ERROR: Player Deplucate or Manque...!");
         exit (1);
     }
+    space_checking(cub);
     
     
 }
