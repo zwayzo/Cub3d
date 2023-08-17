@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 02:00:16 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 15:02:50 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:04:34 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	**alloce_big_cases(char *s, char c, size_t begin, size_t counter)
 	return (ptr);
 }
 
-char	**alloc_small_cases(char *s, char c, char **ptr, size_t begin)
+char	**alloc_small_cases(char *s, char c, char **ptr, int begin)
 {
 	int	counter;
 	int	i;
@@ -94,7 +94,7 @@ char	**remplisage_small_cases(char *s, char c, char **ptr, int begin)
 }
 
 // case c null or s all c or s empty
-char	**catch_error(char *s, size_t i)
+char	**catch_error(char *s, int i)
 {
 	char	**ptr;
 

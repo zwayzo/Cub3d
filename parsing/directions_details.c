@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 21:31:33 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 20:45:58 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:08:44 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,8 @@ void    check_for_deplucate(t_cub *cub)
 void    directions_details(t_cub *cub)
 {
     int i;
-    int j;
 
     i = 0;
-    j = 0;
     ft_directions_init(cub);
     
     i = 0;

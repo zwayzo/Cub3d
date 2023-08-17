@@ -6,16 +6,31 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:58:26 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/13 21:52:15 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:46:55 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub.h"
 
+
+void    ft_init(t_cub *cub)
+{
+    cub->indices->ciel->blue = 0;
+    cub->indices->ciel->green = 0;
+    cub->indices->ciel->red = 0;
+    cub->indices->floor->blue = 0;
+    cub->indices->floor->green = 0;
+    cub->indices->floor->red = 0;
+    cub->indices->ciel_indice = 0;
+    cub->indices->floor_indice = 0;
+}
 void    red_ciel_split(char *str, t_cub *cub)
 {
     char **tmp;
     char **t;
+    // cub->indices->ciel = malloc(sizeof(t_colors));
+    cub->indices->ciel->red = 0;
+    // printf("|%d|\n", cub->indices->ciel->red);
     tmp = ft_split(str, ',');
     if (double_lenght(tmp) != 3)
     {
@@ -25,6 +40,8 @@ void    red_ciel_split(char *str, t_cub *cub)
     if (tmp[0])
     {
         t = ft_split(tmp[0], ' ');
+        // printf("HEEEEEEER\n");
+        // printf("{%d{{\n", cub->indices->ciel->red);
         if (t[1] && number_finder(t[1]))
             cub->indices->ciel->red = atoi(t[1]);
         else
@@ -66,6 +83,7 @@ void    blue_ciel_split(char *str, t_cub *cub)
 {
     char **tmp;
     char **t;
+    // printf("str is %s\n", str);
     if (comma_finder(str) == 1)
     {
         tmp = ft_split(str, ',');

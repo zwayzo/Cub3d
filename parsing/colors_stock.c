@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 01:21:54 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/13 14:26:35 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:46:06 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int ciel_detecte(t_cub *cub, int i, int j)
             return (1);
     else if (cub->params->maps[i][j] == 'F'
         && (cub->params->maps[i][j + 1] == 32 
-        || cub->params->maps[i][j + 1] == '\t')
-        || cub->params->maps[i][j + 1] == '\n')
+        || cub->params->maps[i][j + 1] == '\t'
+        || cub->params->maps[i][j + 1] == '\n'))
                 return (2);
     return (0);
 }
@@ -88,8 +88,10 @@ void colors_stock(t_cub *cub)
 
     i = 0;
     j = 0;
-    cub->indices->ciel = malloc(sizeof(cub->indices->ciel));
-    cub->indices->floor = malloc(sizeof(cub->indices->floor));
+    cub->indices->ciel = malloc(sizeof(t_colors));
+    cub->indices->floor = malloc(sizeof(t_colors));
+    ft_init(cub);
+    // printf("HER %d %d\n", cub->indices->floor_indice, cub->indices->ciel_indice);
     while (cub->params->maps[i] && (cub->indices->ciel_indice == 0
     || cub->indices->floor_indice == 0))
     {

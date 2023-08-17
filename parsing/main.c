@@ -69,12 +69,6 @@ char	**map_stock(t_cub *cub)
 
 void	ft_maps_stock(t_cub *cub)
 {
-	char	*tmp;
-	char	*tmp_2;
-	char	**to_r;
-	// int		i;
-	int		j;
-	int		fd;
 	cub->params->lines_numbers = count_lines(cub);
 	cub->params->maps = map_stock(cub);
 }
@@ -83,26 +77,22 @@ void	ft_maps_stock(t_cub *cub)
 
 int main(int ac, char **av)
 {
-	int 	i;
-	int 	j;
-	int		fd;
-	char	*tmp;
 	t_cub	*cub;
 
-	cub = malloc(sizeof(t_cub));
-	cub->params = malloc(sizeof(t_param));
-	cub->indices = malloc(sizeof(t_incice));
 	if (ac != 2)
 	{
 		printf("Error: Not Enought Argguments...!");
 		exit (1);
 	}
+	cub = malloc(sizeof(t_cub));
+	cub->params = malloc(sizeof(t_param));
+	cub->indices = malloc(sizeof(t_incice));
 	name_check(av[1]);
-	fd = open(av[1], O_RDONLY);
 	cub->params->name = av[1];
 	ft_maps_stock(cub);
 	directions_details(cub);
 	colors_stock(cub);
+	// printf("herrr\n");
 	maps_working(cub);
 	// printf("west = %s\n", cub->indices->WE_stock);
 	// printf("south = %s\n", cub->indices->SO_stock);

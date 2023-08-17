@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:56:12 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/07 00:57:41 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:08:25 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void    east_var_exist(char *str, t_cub *cub)
 {
     //  printf("east {%s}\n", str);
     int i;
+    (void) cub;
 
     i = 0;
     while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
@@ -42,6 +43,7 @@ void    west_var_exist(char *str, t_cub *cub)
 {
     //  printf("west {%s}\n", str);
     int i;
+    (void) cub;
 
     i = 0;
     while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
@@ -68,6 +70,7 @@ void    south_var_exist(char *str, t_cub *cub)
 {
     //  printf("south {%s}\n", str);
     int i;
+    (void) cub;
 
     i = 0;
     while (str[i] == 32 || str[i] == '\t' || str[i] == '\n')
@@ -93,6 +96,7 @@ void    south_var_exist(char *str, t_cub *cub)
 void    nord_var_exist(char *str, t_cub *cub)
 {
     int i;
+    (void) cub;
     //  printf("nord{%s}\n", str);
 
     i = 0;
