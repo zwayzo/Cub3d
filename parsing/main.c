@@ -110,6 +110,10 @@ int main(int ac, char **av)
 	// printf("           BLUE :%d\n", cub->indices->ciel->blue);
 	// printf("BEGIN : %d\n", cub->indices->begin_line);
 	// printf("PLAYER %c\n", cub->indices->player);
+while (1)
+{
+	system("leaks cub3d");
+}
 
 //different order
 // last and first wall can have space
