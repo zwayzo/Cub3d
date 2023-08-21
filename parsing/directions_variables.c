@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:56:12 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/17 00:08:25 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:38:02 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,13 @@ void    east_var_exist(char *str, t_cub *cub)
     while (str[i])
         i++;
     i = i - 2;
+    while (str[i] == 32 || str[i] == '\t')
+        i--;
     // printf("{%c} {%c} {%c} {%c}\n", str[i], str[i-1], str[i-2],str[i-3]);
-    if (!(str[i] == 'm' && str[i - 1] == 'p'
+    if ((!(str[i] == 'm' && str[i - 1] == 'p'
         && str[i - 2] == 'x' && str[i - 3] == '.'))
+        && (!(str[i] == 'g' && str[i - 1] == 'n'
+        && str[i - 2] == 'p' && str[i - 3] == '.')))
         {
             printf("ERROR: EAST extention not valid...!");
             exit (1);
@@ -57,9 +61,13 @@ void    west_var_exist(char *str, t_cub *cub)
     while (str[i])
         i++;
     i = i - 2;
+    while (str[i] == 32 || str[i] == '\t')
+        i--;
     // printf("{%c} {%c} {%c} {%c}\n", str[i], str[i-1], str[i-2],str[i-3]);
-    if (!(str[i] == 'm' && str[i - 1] == 'p'
+    if ((!(str[i] == 'm' && str[i - 1] == 'p'
         && str[i - 2] == 'x' && str[i - 3] == '.'))
+        && (!(str[i] == 'g' && str[i - 1] == 'n'
+        && str[i - 2] == 'p' && str[i - 3] == '.')))
         {
             printf("ERROR: WEST extention not valid...!");
             exit (1);
@@ -84,9 +92,13 @@ void    south_var_exist(char *str, t_cub *cub)
     while (str[i])
         i++;
     i = i - 2;
+    while (str[i] == 32 || str[i] == '\t')
+        i--;
     // printf("{%c} {%c} {%c} {%c}\n", str[i], str[i-1], str[i-2],str[i-3]);
-    if (!(str[i] == 'm' && str[i - 1] == 'p'
+    if ((!(str[i] == 'm' && str[i - 1] == 'p'
         && str[i - 2] == 'x' && str[i - 3] == '.'))
+        && (!(str[i] == 'g' && str[i - 1] == 'n'
+        && str[i - 2] == 'p' && str[i - 3] == '.')))
         {
             printf("ERROR: SOUTH extention not valid...!");
             exit (1);
@@ -111,10 +123,14 @@ void    nord_var_exist(char *str, t_cub *cub)
     while (str[i])
         i++;
     i = i - 2;
+    while (str[i] == 32 || str[i] == '\t')
+        i--;
     //  printf("nord {%s}\n", str);
     // printf("{%c} {%c} {%c} {%c}\n", str[i], str[i-1], str[i-2],str[i-3]);
-    if (!(str[i] == 'm' && str[i - 1] == 'p'
+    if ((!(str[i] == 'm' && str[i - 1] == 'p'
         && str[i - 2] == 'x' && str[i - 3] == '.'))
+        && (!(str[i] == 'g' && str[i - 1] == 'n'
+        && str[i - 2] == 'p' && str[i - 3] == '.')))
         {
             printf("ERROR: NORD extention not valid...!");
             exit (1);

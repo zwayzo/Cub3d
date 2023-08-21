@@ -105,4 +105,9 @@ void    colors_check(t_cub *cub);
 void    player_param(t_cub *cub);
 void    space_checking(t_cub *cub);
 void    ft_init(t_cub *cub);
+int     ft_atoi(const char *str);
+int     number_check(char *nb);
+int     down_check(int i, t_cub *cub, int j);
+int     up_check(int i, t_cub *cub, int j);
+
 #endif

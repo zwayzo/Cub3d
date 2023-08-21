@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:20:11 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/17 01:26:23 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:14:23 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void    space_checking(t_cub *cub)
                 if ((cub->params->maps[i][j] == '0')
                 || up_check(i, cub, j - 1) == 1 || down_check(i, cub, j) == 1)
                     {
-                        printf("up=%d | down=%d\n", up_check(i, cub, j), down_check(i, cub, j));
+                        // printf("up=%d | down=%d\n", up /_check(i, cub, j), down_check(i, cub, j));
                         // printf("---->|%c|\n", cub->params->maps[i][j]);
                         space_error();
                     }

@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 20:14:10 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/13 15:05:13 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:23:24 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,17 @@ void    first_wall(t_cub *cub)
     int i;
 
     i = 0;
+    // printf("%s\n", cub->params->maps[cub->indices->begin_line]);
     while (cub->params->maps[cub->indices->begin_line][i]== 32 
         || cub->params->maps[cub->indices->begin_line][i]== '\t')
         i++;
     while (cub->params->maps[cub->indices->begin_line][i + 1])
     {
-        if (cub->params->maps[cub->indices->begin_line][i] != '1')
+        if (cub->params->maps[cub->indices->begin_line][i] != '1'
+            && (cub->params->maps[cub->indices->begin_line][i] == 32 || cub->params->maps[cub->indices->begin_line][i] == '\t')
+            && down_check(cub->indices->begin_line, cub, i))
         {
+            // printf("%d\n", down_check(cub->indices->begin_line, cub, i));
             printf("ERROR: incomplet wall(first line)...!");
             exit (1);
         }
@@ -89,7 +93,7 @@ void    last_wall(t_cub *cub)
         j++;
     while (cub->params->maps[i][j + 1])
     {
-        if (cub->params->maps[i][j] != '1')
+        if (cub->params->maps[i][j] != '1' && (cub->params->maps[i][j] == 32 || cub->params->maps[i][j] == '\t') && up_check(i, cub, j))
         {
             printf("ERROR: last wall incomplet...!");
             exit (1);

@@ -1,4 +1,4 @@
-NAME = Cub3d
+NAME = cub3d
 CFLAGS =  -Wall -Wextra -Werror -fsanitize=address -g3
 FLAGS = -D BUFFER_SIZE=1
 MLX =  -Lmlx -framework OpenGL -framework AppKit 

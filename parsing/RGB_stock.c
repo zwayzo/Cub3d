@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:23:28 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/13 21:58:08 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:41:40 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    red_floor_split(char *str, t_cub *cub)
             t = ft_split(tmp[0], ' ');
             
             if (t[1] && number_finder(t[1]))
-                cub->indices->floor->red = atoi(t[1]);
+                cub->indices->floor->red = ft_atoi(t[1]);
             else
             {
                double_free (t);
@@ -65,7 +65,7 @@ void    green_floor_split(char *str, t_cub *cub)
         {
             t = ft_split(tmp[1], ' ');
             if (t[0] && number_finder(t[0]))
-                cub->indices->floor->green = atoi(t[0]);
+                cub->indices->floor->green = ft_atoi(t[0]);
             else
             {
                double_free (t);
@@ -95,7 +95,7 @@ void    blue_floor_split(char *str, t_cub *cub)
         {
             t = ft_split(tmp[2], ' ');
             if (t[0] && number_finder(t[0]))
-                cub->indices->floor->blue = atoi(t[0]);
+                cub->indices->floor->blue = ft_atoi(t[0]);
             else
             {
                double_free (t);

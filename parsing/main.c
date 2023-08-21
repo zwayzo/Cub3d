@@ -111,7 +111,8 @@ int main(int ac, char **av)
 	// printf("BEGIN : %d\n", cub->indices->begin_line);
 	// printf("PLAYER %c\n", cub->indices->player);
 
-
+//different order
+// last and first wall can have space
 
 	
 }
