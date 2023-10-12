@@ -109,5 +109,8 @@ int     ft_atoi(const char *str);
 int     number_check(char *nb);
 int     down_check(int i, t_cub *cub, int j);
 int     up_check(int i, t_cub *cub, int j);
+void    after_line(t_cub *cub);
+void    space_error();
+void    after_line_down(t_cub *cub);
 
 #endif

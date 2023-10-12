@@ -94,6 +94,7 @@ int main(int ac, char **av)
 	colors_stock(cub);
 	// printf("herrr\n");
 	maps_working(cub);
+	
 	// printf("west = %s\n", cub->indices->WE_stock);
 	// printf("south = %s\n", cub->indices->SO_stock);
 	// printf("east = %s\n", cub->indices->EA_stock);
@@ -110,10 +111,10 @@ int main(int ac, char **av)
 	// printf("           BLUE :%d\n", cub->indices->ciel->blue);
 	// printf("BEGIN : %d\n", cub->indices->begin_line);
 	// printf("PLAYER %c\n", cub->indices->player);
-while (1)
-{
-	system("leaks cub3d");
-}
+// while (1)
+// {
+// 	system("leaks cub3d");
+// }
 
 //different order
 // last and first wall can have space

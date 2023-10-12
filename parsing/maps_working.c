@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 19:21:46 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/21 14:57:30 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/10/12 23:06:51 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ void    maps_working(t_cub *cub)
         exit (1);
     }
     space_checking(cub);
+	after_line(cub);
+	after_line_down(cub);
+	
+	// printf("ENTER\n");
 }
 
 int	number_check(char *nb)

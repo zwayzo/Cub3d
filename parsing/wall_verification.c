@@ -6,7 +6,7 @@
 /*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 20:14:10 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/21 15:23:24 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/10/12 22:20:04 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ void    first_one(t_cub *cub)
     i = cub->indices->begin_line;
     while (cub->params->maps[i + 1])
     {
-        while (cub->params->maps[i][j] == 32 || cub->params->maps[i][j] == '\t')
+        while ((cub->params->maps[i][j] == 32 || cub->params->maps[i][j] == '\t') && cub->params->maps[i][j])
             j++;
-        if (cub->params->maps[i][j] != '1')
+        // printf("1\n");
+        if (cub->params->maps[i][j] != '1' && cub->params->maps[i][j] != ' ' && cub->params->maps[i][j] != '\t')
         {
+            // printf("2\n");
             printf("ERROR: incomplet wall(first one)(line %d)...!", i - cub->indices->begin_line + 1);
             exit (1);
         }
+        // printf("3\n");
         i++;
         j = 0;
     }
@@ -40,20 +43,15 @@ void    first_wall(t_cub *cub)
 
     i = 0;
     // printf("%s\n", cub->params->maps[cub->indices->begin_line]);
-    while (cub->params->maps[cub->indices->begin_line][i]== 32 
-        || cub->params->maps[cub->indices->begin_line][i]== '\t')
-        i++;
-    while (cub->params->maps[cub->indices->begin_line][i + 1])
+    while (cub->params->maps[cub->indices->begin_line][i] == '1')
+            i++;
+    // printf("{%c}\n", cub->param  s->maps[cub->indices->begin_line][i]);
+    if (cub->params->maps[cub->indices->begin_line][i] != '\0'
+    && cub->params->maps[cub->indices->begin_line][i] != '\n')
     {
-        if (cub->params->maps[cub->indices->begin_line][i] != '1'
-            && (cub->params->maps[cub->indices->begin_line][i] == 32 || cub->params->maps[cub->indices->begin_line][i] == '\t')
-            && down_check(cub->indices->begin_line, cub, i))
-        {
-            // printf("%d\n", down_check(cub->indices->begin_line, cub, i));
-            printf("ERROR: incomplet wall(first line)...!");
-            exit (1);
-        }
-        i++;
+        // printf("%d\n", down_check(cub->indices->begin_line, cub, i));
+        printf("ERROR: incomplet wall(first line)...!");
+        exit (1);
     }
 }
 
@@ -68,12 +66,13 @@ void    last_one(t_cub *cub)
     {
         while (cub->params->maps[j][i + 2])
             i++;
-        // printf("|%c|\n", cub->params->maps      /[j][]);
-        if (cub->params->maps[j][i] != '1')
+        // printf(",,,1\n");
+        if (cub->params->maps[j][i] != '1' && cub->params->maps[j][i] != ' ' && cub->params->maps[j][i] != '\t')
         {
             printf("ERROR: incomplet wall(last one)(line %d)...!", j - cub->indices->begin_line + 1);
             exit (1);
         }
+        // printf("...2\n");
         j++;
         i = 0;
     }
