@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: nel-hark <nel-hark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 18:19:17 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/01 15:19:06 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:48:35 by nel-hark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,3 @@ char	*get_next_line(int fd)
 	str = after_new_line(str);
 	return (before);
 }
-
-// int main()
-// {
-// 	int fd = ("fd.txt",O_RDONLY | O_CREAT);
-// 	ft_printf("%s",get_next_line(fd));
-// 	// fd = ("test.txt",O_RDONLY | O_CREAT);
-// 	// ft_printf("%s",get_next_line(fd));
-
-// }

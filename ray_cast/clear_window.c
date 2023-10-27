@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexadecimale.c                                  :+:      :+:    :+:   */
+/*   clear_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-hark <nel-hark@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 19:36:58 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/10/26 22:13:54 by nel-hark         ###   ########.fr       */
+/*   Created: 2023/10/07 15:42:44 by nel-hark          #+#    #+#             */
+/*   Updated: 2023/10/26 20:16:14 by nel-hark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub.h"
 
-int	hexa(unsigned long long dec, int i, int flag)
+int	update_screen(void *param)
 {
-	int	count;
+	t_loop_data	*loop_data;
+	t_cub		*cub;
+	t_data		*img;
+	t_player	*player;
 
-	count = 0;
-	if (dec < 0)
-	{
-		dec *= -1;
-		count += ft_putchar('-');
-	}
-	if (dec >= (unsigned long long)i)
-		count += hexa(dec / i, i, flag);
-	if (flag == 0)
-		count += ft_putchar(HEX[dec % i]);
-	else
-		count += ft_putchar(HEX_MAJ[dec % i]);
-	return (count);
+	loop_data = (t_loop_data *)param;
+	img = (loop_data->img);
+	cub = img->cub;
+	player = loop_data->player;
+	mlx_clear_window(img->mlx, img->mlx_win);
+	draw_3d(img, player, cub);
+	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 0, 0);
+	return (0);
 }

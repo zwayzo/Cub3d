@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: moazzedd <moazzedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 02:00:16 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/08/17 00:04:34 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:13:14 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ char	**remplisage_small_cases(char *s, char c, char **ptr, int begin)
 	return (ptr);
 }
 
-// case c null or s all c or s empty
 char	**catch_error(char *s, int i)
 {
 	char	**ptr;

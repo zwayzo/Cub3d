@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maps_working.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moazzedd <moazzedd@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: moazzedd <moazzedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 19:21:46 by moazzedd          #+#    #+#             */
-/*   Updated: 2023/10/12 23:06:51 by moazzedd         ###   ########.fr       */
+/*   Updated: 2023/10/27 03:36:22 by moazzedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ int	overflow(int i, int j, int x, int nb)
 		return (nb * x);
 }
 
+int	my_function(int nb, int *j, const char *str)
+{
+	nb *= 10;
+	nb += str[*j] - 48;
+	*j = *j + 1;
+	return (nb);
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
@@ -33,7 +41,7 @@ int	ft_atoi(const char *str)
 	nb = 0;
 	x = 1;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-			i++;
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
@@ -44,40 +52,32 @@ int	ft_atoi(const char *str)
 		i++;
 	j = i;
 	while (str[j] >= '0' && str[j] <= '9')
-	{
-		nb *= 10;
-		nb += str[j++] - 48;
-	}
+		nb = my_function(nb, &j, str);
 	if (str[j] != '\0' && str[j] != 10)
+		global_error();
+	return (overflow(i, j, x, nb));
+}
+
+void	maps_working(t_cub *cub)
+{
+	first_wall(cub);
+	first_one(cub);
+	last_one(cub);
+	last_wall(cub);
+	player_param(cub);
+	if (cub->indices->player_indice != 1)
 	{
 		printf("ERROR\n");
 		exit (1);
 	}
-	return (overflow(i, j, x, nb));
-}
-
-void    maps_working(t_cub *cub)
-{
-    first_wall(cub);
-    first_one(cub);
-    last_one(cub);
-    last_wall(cub);
-    player_param(cub);
-    if (cub->indices->player_indice != 1)
-    {
-        printf("ERROR: Player Deplucate or Manque...!");
-        exit (1);
-    }
-    space_checking(cub);
+	space_checking(cub);
 	after_line(cub);
 	after_line_down(cub);
-	
-	// printf("ENTER\n");
 }
 
 int	number_check(char *nb)
 {
-	if (ft_atoi(nb) < 0)
+	if (ft_atoi(nb) < 0 || ft_atoi(nb) > 255)
 		return (0);
 	return (1);
 }
